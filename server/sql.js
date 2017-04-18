@@ -2,6 +2,7 @@ var sql = require("mysql");
 var moment = require("moment");
 var uuid= require("node-uuid");
 var config= require("./config");
+require("./extension");
 var pool = sql.createPool(config.mysql);
 pool.on("connection", function(connection)
         {
