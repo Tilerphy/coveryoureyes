@@ -38,4 +38,19 @@ user.get("/register", (req, res)=>{
 		res.end();
 	}
 });
+
+user.get("/info", (req, res)=>{
+
+	helper.query("alluser", "fedid=?", [req.query["fedId"]], ["id","fedid","nickname","others"], (err, result)=>{
+		if(err){
+                    	res.status(400);
+                    	res.json(err);
+                        res.end();
+                }else{
+                        res.json(result);
+                        res.end();
+                }
+	});
+});
+
 module.exports = user;

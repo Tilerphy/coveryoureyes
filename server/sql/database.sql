@@ -5,7 +5,7 @@ create database coveryoureyes;
 use coveryoureyes;
 create table trophy(id varchar(64) primary key, gameid varchar(64), name varchar(128), trophypoint int, icon varchar(256));
 create table game(id varchar(64) primary key, name varchar(128), icon varchar(256), description text);
-create table alluser(id varchar(64) primary key ,fedid varchar(128), nickname varchar(128), others text, icon varchar(256));
+create table alluser(id varchar(64) primary key ,fedid varchar(128), nickname varchar(128), others text);
 create table trophyrecord(id varchar(64) primary key,fedid varchar(128), recordcount int, needcount int, trophy varchar(64), createtime bigint, endtime 
 bigint);
 create table ranking(id varchar(64) primary key, fedid varchar(128), gameid varchar(64), highscore bigint, rank int, createtime bigint);
