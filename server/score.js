@@ -1,6 +1,33 @@
 var score = require("express").Router();
 var helper = require("./sql");
 
+score.get("/ranking", (req,res)=>{
+	
+	var fedId= req.query["fedId"];
+	var gameid=req.query["gameid"];
+	if(fedId && gameid){
+		helper.execute("select count(1) as rank,fedid,gameid,highscore,createtime from ranking where highscore >="+
+				"(select highscore from ranking where fedid=? and gameid = ?)",[fedId,gameid], (err, result)=>{
+			if(!err){
+                    		res.json(result);
+                                res.end();
+                                return;
+                       	}else{
+				res.status(400);
+                                res.json(err);
+                                res.end();
+                                return;
+                        }
+		});
+	}else{
+		res.status(400);
+                res.json(false);
+                res.end();
+                return;
+	}
+
+});
+
 score.get("/submit", (req,res)=>{
 	var fedId = req.query["fedId"];
 	var score  = req.query["score"] ? req.query["score"] : 0;
@@ -44,6 +71,8 @@ result)=>{
 	}
 	
 	
-});			
+});
+
+			
 
 module.exports = score;
