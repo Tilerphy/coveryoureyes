@@ -3,6 +3,8 @@ var app=express();
 var http = require("http").Server(app);
 var score = require("./score");
 var user = require("./user");
+var trophy = require("./trophy");
 app.use("/api/score", score);
 app.use("/api/user", user);
+app.use("/api/trophy", trophy);
 http.listen(8080);

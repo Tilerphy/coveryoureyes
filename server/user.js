@@ -1,7 +1,7 @@
 var user = require("express").Router();
 var helper= require("./sql");
 user.get("/register", (req, res)=>{
-	var fedId = req.query["fedId"];
+	var fedId = req.query["fedid"];
 	var nickname = req.query["nickname"];
 	var others = req.query["others"];
 	var othersObj = others? JSON.parse(others) : null;
@@ -41,7 +41,7 @@ user.get("/register", (req, res)=>{
 
 user.get("/info", (req, res)=>{
 
-	helper.query("alluser", "fedid=?", [req.query["fedId"]], ["id","fedid","nickname","others"], (err, result)=>{
+	helper.query("alluser", "fedid=?", [req.query["fedid"]], ["id","fedid","nickname","others"], (err, result)=>{
 		if(err){
                     	res.status(400);
                     	res.json(err);
