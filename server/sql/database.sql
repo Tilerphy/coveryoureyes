@@ -11,5 +11,5 @@ create table ranking(id varchar(64) primary key, fedid varchar(128), gameid varc
 create index trophy_index on trophy(id, gameid);
 create index alluser_index on alluser(fedid, nickname, id);
 create index game_index on  game(id, name);
-create index tr_index on trophyrecord(id, fedid, trophy);
+create index tr_index on trophyrecord(id, fedid, trophyid);
 create index ranking_index on ranking(fedid, id, gameid, rank);
