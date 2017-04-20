@@ -3,7 +3,7 @@ var helper = require("./sql");
 
 score.get("/ranking", (req,res)=>{
 	
-	var fedId= req.query["fedId"];
+	var fedId= req.query["fedid"];
 	var gameid=req.query["gameid"];
 	if(fedId && gameid){
 		helper.execute("select count(1) as rank,fedid,gameid,highscore,createtime from ranking where highscore >="+
@@ -29,7 +29,7 @@ score.get("/ranking", (req,res)=>{
 });
 
 score.get("/submit", (req,res)=>{
-	var fedId = req.query["fedId"];
+	var fedId = req.query["fedid"];
 	var score  = req.query["score"] ? req.query["score"] : 0;
 	var gameid = req.query["gameid"];
 	if(fedId == null  || gameid ==null){
