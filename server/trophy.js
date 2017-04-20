@@ -58,13 +58,13 @@ trophy.get("/my", (req, res)=>{
 });
 
 trophy.get("/add", (req,res)=>{
-	var fedId = req.query("fedid");
-	var trophyId = req.query("trophyid");
+	var fedId = req.query["fedid"];
+	var trophyId = req.query["trophyid"];
 	if(fedId && trophyId){
 		helper.exists("trophyrecord", "trophyid=? and fedid=?", [trophyId, fedId], 
 		()=>{
 			res.status(400);
-                       	res.end();
+                       	res.end("Existed.");
 		},
 		()=>{
 			helper.insert("trophyrecord",{"createtime":Date.now(), "fedid":fedId,"trophyid":trophyId}, (err, result)=>{
