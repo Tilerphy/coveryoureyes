@@ -1,7 +1,64 @@
 body {
-  background: black;
+  padding: 0;
+  margin: 0;
 }
 header {
-  font-size: 18px;
-  background: yellow;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  background: #0078D7;
+  padding: 20px 0;
+  color: white;
+  font-weight: bold;
+}
+.container {
+  position: relative;
+  padding-top: 67px;
+}
+.btn-primary {
+  border: 1px solid #0078D7;
+  background: white;
+  color: #0078D7;
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  width: 45%;
+  height: 50px;
+  margin: 0 auto;
+  outline: none;
+  border-radius: 25px;
+  margin-top: 30px;
+}
+.btn-primary:active {
+  background: #003f71;
+}
+.btn-success {
+  border: none;
+  background: #00CC6A;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  outline: none;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+.btn-success:active {
+  background: #006635;
+}
+.scores {
+  width: 100%;
+  margin-top: 30px;
+}
+.scores > tbody > tr > td {
+  width: 50%;
+  padding: 10px 15px;
+}
+.scores > tbody > tr > td:first-child {
+  text-align: right;
 }
