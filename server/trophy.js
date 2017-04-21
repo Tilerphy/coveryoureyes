@@ -3,7 +3,7 @@ var helper = require("./sql");
 trophy.get("/info", (req,res)=>{
 	var trophyId = req.query["id"];
 	if(trophyId){
-		helper.query("trophy", "id=?", [trophyId], ["id","gameid","name","trophypoint","icon"], (err, result)=>{
+		helper.query("trophy", "id=?", [trophyId], ["id","gameid","name","trophypoint","icon","description"], (err, result)=>{
 			if(err){
 				res.status(400);
 				res.json(err);
@@ -58,13 +58,13 @@ trophy.get("/my", (req, res)=>{
 });
 
 trophy.get("/add", (req,res)=>{
-	var fedId = req.query("fedid");
-	var trophyId = req.query("trophyid");
+	var fedId = req.query["fedid"];
+	var trophyId = req.query["trophyid"];
 	if(fedId && trophyId){
 		helper.exists("trophyrecord", "trophyid=? and fedid=?", [trophyId, fedId], 
 		()=>{
 			res.status(400);
-                       	res.end();
+                       	res.end("Existed.");
 		},
 		()=>{
 			helper.insert("trophyrecord",{"createtime":Date.now(), "fedid":fedId,"trophyid":trophyId}, (err, result)=>{
