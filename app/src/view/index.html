@@ -13,13 +13,13 @@
 		Cover Your Eyes
 	</header>
 	<div class="container">
-		<button type="button" class="btn-success">Start</button>
+		<button type="button" class="btn-success" id="btn-start">Start</button>
 		
 		<table class="scores">
 			<tbody>
 				<tr>
 					<td>Your Score: </td>
-					<td>0</td>
+					<td id="score">0</td>
 				</tr>
 				<tr>
 					<td>Your Best: </td>
@@ -34,5 +34,9 @@
 		
 		<button type="button" class="btn-primary">Share</button>
 	</div>
+	
+	<audio id="audio">
+	    <source src="../sources/audio.mp3" />
+	</audio>
 </body>
 </html>

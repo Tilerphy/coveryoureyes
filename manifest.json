@@ -66,7 +66,7 @@
 		"NativeUI": {},
 		"Invocation": {},
 		"Webview": {},
-		"NativeObj": {}
+		"NativeObj": {},"Device":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -1426,7 +1426,8 @@
 					"/app/asset/js/index.js",
 					"/app/asset/css/index.css",
 					"app/asset/js/index.js",
-					"app/asset/css/index.css"
+					"app/asset/css/index.css",
+					"app/asset/sources/audio.mp3"
 				],
 				"refer": [],
 				"priority": 0

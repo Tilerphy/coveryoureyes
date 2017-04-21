@@ -46,14 +46,17 @@ header {
   margin: 0 auto;
   outline: none;
   border-radius: 50%;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 .btn-success:active {
   background: #006635;
 }
+.btn-success:disabled {
+  background: #ddd;
+}
 .scores {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 .scores > tbody > tr > td {
   width: 50%;
@@ -61,4 +64,7 @@ header {
 }
 .scores > tbody > tr > td:first-child {
   text-align: right;
+}
+audo {
+  display: none;
 }
