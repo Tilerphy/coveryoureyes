@@ -1,11 +1,11 @@
 {
-	"app/asset/view/index.html": {
-		"resources": [
-			"/app/asset/js/index.js",
-			"/app/asset/css/index.css",
-			"app/asset/js/index.js",
-			"app/asset/css/index.css",
-			"app/asset/sources/audio.mp3"
-		]
-	}
+  "app/asset/view/index.html": {
+    "resources": [
+      "/app/asset/js/index.js",
+      "/app/asset/css/index.css",
+      "app/asset/js/index.js",
+      "app/asset/css/index.css",
+      "app/asset/sources/audio.mp3"
+    ]
+  }
 }
